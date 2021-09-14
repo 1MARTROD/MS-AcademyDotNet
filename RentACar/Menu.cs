@@ -1,5 +1,4 @@
 ﻿using System;
-using RentACar;
 
 namespace RentACar
 {
@@ -7,7 +6,7 @@ namespace RentACar
     {
         public void MenuUi()
         {
-            Console.WriteLine("Welcome to Car menu");
+            Console.WriteLine("=========================");
             Console.WriteLine("Enter a number for option");
             Console.WriteLine("=========================");
             Console.WriteLine("1 to add a car");
@@ -15,6 +14,7 @@ namespace RentACar
             Console.WriteLine("3 to delete a car by Id");
             Console.WriteLine("4 to show a car by Id");
             Console.WriteLine("5 to exit");
+            Console.WriteLine("=========================");
         }
 
         public bool SwitchForMenu()
@@ -31,7 +31,6 @@ namespace RentACar
                 {
                     case 1:
                         Console.WriteLine("Option 1 selected. Add a car ");
-                        //var carCRUD = new CarCRUD();
                         carCRUD.CreateCar();
                         break;
                     case 2:
