@@ -40,7 +40,6 @@ public class CarCRUD
     public void ReadCar(String idCar)
     {
         carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
-        //TODO: implementar un foreach
         foreach (Car car in carList)
         {
             if (Convert.ToByte(idCar) == car.IdCar)
@@ -59,7 +58,6 @@ public class CarCRUD
     public void UpdateCar(string idCar)
     {
         carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
-        //TODO: implementar un foreach
         foreach (Car car in carList)
         {
             if (Convert.ToByte(idCar) == (car.IdCar))
