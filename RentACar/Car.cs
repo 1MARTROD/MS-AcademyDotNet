@@ -10,5 +10,6 @@
         public int IdPlate { get; set; }
         public bool Availability { get; set; }
         public int IdCar { get; set; }
+        public bool IsCarDeleted { get; set; }
     }
 }
