@@ -6,13 +6,10 @@ namespace RentACar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Create a new car");
-            var carCRUD = new CarCRUD();
-            carCRUD.CreateCar();
-            Console.WriteLine("Input a car Id to display a car");
-            carCRUD.ReadCar(Console.ReadLine());
-            Console.WriteLine("Edit a car by Id");
-            carCRUD.Update(Console.ReadLine());
+            Console.WriteLine("Welcome to Car menu");
+            Menu menu = new Menu();
+            menu.SwitchForMenu();
+
         }
     }
 }
