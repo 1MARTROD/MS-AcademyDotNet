@@ -11,6 +11,8 @@ namespace RentACar
             carCRUD.CreateCar();
             Console.WriteLine("Input a car Id to display a car");
             carCRUD.ReadCar(Console.ReadLine());
+            Console.WriteLine("Edit a car by Id");
+            carCRUD.Update(Console.ReadLine());
         }
     }
 }

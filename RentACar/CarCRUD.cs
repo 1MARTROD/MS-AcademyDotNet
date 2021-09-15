@@ -63,24 +63,14 @@ using System.IO;
             {
                 if (Convert.ToByte(Id) == (carList[i].IdPlate))
                 {
-                    //TODO When IdCar is implemented delete comments
-                    //Console.WriteLine("You will update a car based on its Id");
-                    Console.WriteLine("Enter ID Plate");
-                    carList[i].IdPlate = Convert.ToByte(Console.ReadLine());
-                    Console.WriteLine("Enter car brand:");
-                    carList[i].Brand = Console.ReadLine();
-                    Console.WriteLine("Enter car model:");
-                    carList[i].Model = Console.ReadLine();
+                    Console.WriteLine("You will update a car based on its Id");
+                    Console.WriteLine("Enter availability. Answer true or false");
+                    carList[i].Availability = Convert.ToBoolean(Console.ReadLine());
                     Console.WriteLine("Enter colour:");
                     carList[i].Colour = Console.ReadLine();
-                    Console.WriteLine("Enter doors amount:");
-                    carList[i].Doors = Console.ReadLine();
-                    Console.WriteLine("Enter transmission type:");
-                    carList[i].Transmission = Console.ReadLine();
                     Console.WriteLine("Car Updated successfully!");
                     string json = JsonConvert.SerializeObject(carList);
                     System.IO.File.WriteAllText(path, json);
-
                 }
             }
         }
