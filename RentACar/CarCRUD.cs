@@ -81,7 +81,6 @@ public class CarCRUD
         {
             element.IsCarDeleted = true;
             Console.WriteLine($"Id car: {idCar} deleted!");
-            //carList.Remove(element);
             string json = JsonConvert.SerializeObject(carList);
             System.IO.File.WriteAllText(path, json);
             break;
