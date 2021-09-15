@@ -41,36 +41,34 @@ public class CarCRUD
     public void ReadCar(String idCar)
     {
         carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
-        //TODO: implementar un foreach
-        for (var i = 0; i < carList.Count; i++)
+        foreach (Car car in carList)
 
         {
-            if (Convert.ToByte(idCar) == carList[i].IdCar)
+            if (Convert.ToByte(idCar) == car.IdCar)
             {
-                Console.WriteLine($"Id Car: {carList[i].IdCar}");
-                Console.WriteLine($"Availability: {carList[i].Availability}");
-                Console.WriteLine($"Id plate: {carList[i].IdPlate}");
-                Console.WriteLine($"Brand: {carList[i].Brand}");
-                Console.WriteLine($"Model: {carList[i].Model}");
-                Console.WriteLine($"Door number: {carList[i].Doors}");
-                Console.WriteLine($"Colour: {carList[i].Colour}");
-                Console.WriteLine($"Transmission type: {carList[i].Transmission}");
+                Console.WriteLine($"Id Car: {car.IdCar}");
+                Console.WriteLine($"Availability: {car.Availability}");
+                Console.WriteLine($"Id plate: {car.IdPlate}");
+                Console.WriteLine($"Brand: {car.Brand}");
+                Console.WriteLine($"Model: {car.Model}");
+                Console.WriteLine($"Door number: {car.Doors}");
+                Console.WriteLine($"Colour: {car.Colour}");
+                Console.WriteLine($"Transmission type: {car.Transmission}");
             }
         }
     }
     public void UpdateCar(string idCar)
     {
         carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
-        //TODO: implementar un foreach
-        for (var i = 0; i < carList.Count; i++)
+        foreach (Car car in carList)
         {
-            if (Convert.ToByte(idCar) == (carList[i].IdCar))
+            if (Convert.ToByte(idCar) == (car.IdCar))
             {
                 Console.WriteLine("You will update a car based on its Id");
                 Console.WriteLine("Enter availability. Answer true or false");
-                carList[i].Availability = Convert.ToBoolean(Console.ReadLine());
+                car.Availability = Convert.ToBoolean(Console.ReadLine());
                 Console.WriteLine("Enter colour:");
-                carList[i].Colour = Console.ReadLine();
+                car.Colour = Console.ReadLine();
                 Console.WriteLine("Car Updated successfully!");
                 string json = JsonConvert.SerializeObject(carList);
                 System.IO.File.WriteAllText(path, json);
