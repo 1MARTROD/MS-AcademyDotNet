@@ -17,9 +17,10 @@ using System.IO;
 
         public void CreateCar()
         {
-            //TODO add automatic IdCar
             carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
             car.Availability = true;
+            car.IdCar = Convert.ToByte(carList.Count + 1);
+            Console.WriteLine($"Id Car: { car.IdCar}");
             Console.WriteLine("Enter ID Plate");
             car.IdPlate = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Enter car brand:");
