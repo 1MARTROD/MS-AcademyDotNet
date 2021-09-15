@@ -16,7 +16,6 @@ public class CarCRUD
 
     public void CreateCar()
     {
-        Add_a_menu
         carList = JsonConvert.DeserializeObject<List<Car>>(jsonString);
         car.IdCar = Convert.ToByte(carList.Count + 1);
         Console.WriteLine($"creating car with Id {car.IdCar}");
