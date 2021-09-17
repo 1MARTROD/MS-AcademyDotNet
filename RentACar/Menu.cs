@@ -23,6 +23,7 @@ namespace RentACar
 
             while (!exit)
             {
+                var car = new Car();
                 MenuUi();
                 int option = Convert.ToByte(Console.ReadLine());
                 var carCRUD = new CarCRUD();
@@ -31,19 +32,27 @@ namespace RentACar
                 {
                     case 1:
                         Console.WriteLine("Option 1 selected. Add a car ");
-                        carCRUD.CreateCar();
+                      //  carCRUD.CreateCar();
                         break;
                     case 2:
                         Console.WriteLine("Option 2 selected. Edit a car by Id");
-                        carCRUD.UpdateCar(Console.ReadLine());
+                    //    carCRUD.UpdateCar(Console.ReadLine());
                         break;
                     case 3:
                         Console.WriteLine("Option 3 selected. Delete a car by Id");
-                        carCRUD.Delete(Convert.ToInt16(Console.ReadLine()));
+                      //  carCRUD.Delete(Convert.ToInt16(Console.ReadLine()));
                         break;
                     case 4:
                         Console.WriteLine("Option 4 selected. Show a car by Id");
-                        carCRUD.ReadCar(Console.ReadLine());
+                        car = carCRUD.Read(Convert.ToInt16(Console.ReadLine()));
+                        Console.WriteLine($"Id Car: {car.IdCar}");
+                        Console.WriteLine($"Availability: {car.Availability}");
+                        Console.WriteLine($"Id plate: {car.IdPlate}");
+                        Console.WriteLine($"Brand: {car.Brand}");
+                        Console.WriteLine($"Model: {car.Model}");
+                        Console.WriteLine($"Door number: {car.Doors}");
+                        Console.WriteLine($"Colour: {car.Colour}");
+                        Console.WriteLine($"Transmission type: {car.Transmission}");
                         break;
                     case 5:
                         Console.WriteLine("Exit");
